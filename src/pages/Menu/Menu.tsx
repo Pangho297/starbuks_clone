@@ -3,27 +3,23 @@ import Product from '../../components/Product/Product';
 import './style.scss';
 
 const Menu = (menuData) => {
+  
   console.log(menuData);
+  const childrens = menuData.menu.children;
+  const [children, setChildren] = useState(childrens);
+
   return (
-    // {menus.map((menus, index) => (
-    //   <div className="" key={index}>
-    //     <p>{menus.name}</p>
-    //     <Menu />
-    //   </div>
-    // ))}
     <div>
-      {menuData.map((menuData, index) => (
-        <div className='category' key={index}>
-          <p className='category-name'>{menuData.name}</p>
-           <div className='menuList'>
-           {Array.from({ length: 7 }).map((_, index) => (
-             <Product key={index} />
-           ))}
-           </div>
-        </div>
-      ))}
-     
-      
+      <div className='category'>
+        <p className='category-name'>{menuData.menu.name}</p>
+          <div className='menuList'>
+            {
+              children.map((children, index)=>(
+                <Product children={children} key={index} />
+              ))
+            }
+          </div>
+      </div>
     </div>
   );
 };

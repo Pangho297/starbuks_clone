@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.scss';
 
-const Product = () => {
+const Product = (children) => {
   
+  const itemProduct = children.produts;
   return (
     <>
       <div className="product">
         <div className='product-img'>
-          <img src="" alt="" />
+          <img src={children.children.product.name} alt="" />
         </div>
-        <p className="product-name">Oleato™</p>
+        <p className="product-name">{children.children.name}</p>
       </div>
     </>
   );
