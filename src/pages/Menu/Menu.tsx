@@ -3,19 +3,16 @@ import Product from '../../components/Product/Product';
 import './style.scss';
 
 const Menu = (menuData) => {
-  
-  console.log(menuData);
-  const childrens = menuData.menu.children;
-  const [children, setChildren] = useState(childrens);
-
+  const dataMenu = menuData.menu;
+  const [dataMenus, setDataMenus] = useState(dataMenu);
   return (
     <div>
       <div className='category'>
         <p className='category-name'>{menuData.menu.name}</p>
           <div className='menuList'>
             {
-              children.map((children, index)=>(
-                <Product children={children} key={index} />
+              dataMenus.children.map((items, index)=>(
+                <Product children={items} key={index} />
               ))
             }
           </div>

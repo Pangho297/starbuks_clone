@@ -1,0 +1,10 @@
+#root{
+  width: 100%;
+}
+.container{
+  max-width: 1336px; margin: 0 auto; display:flex; gap: 120px; 
+  .aside{ flex-shrink: 0;}
+}
+.content-title{
+  font-size: 28px; font-weight: 700; margin-bottom: 64px;
+}
