@@ -2,17 +2,15 @@ import React, { useState } from 'react';
 import Product from '../../components/Product/Product';
 import './style.scss';
 
-const Menu = (menuData) => {
-  const dataMenu = menuData.menu;
-  const [dataMenus, setDataMenus] = useState(dataMenu);
+const Menu = (data:String) => {
   return (
     <div>
       <div className='category'>
-        <p className='category-name'>{menuData.menu.name}</p>
+        <p className='category-name'>{data.menu.name}</p>
           <div className='menuList'>
             {
-              dataMenus.children.map((items, index)=>(
-                <Product children={items} key={index} />
+              data.menu.children.map((items, index)=>(
+                <Product item={items} key={index} />
               ))
             }
           </div>
